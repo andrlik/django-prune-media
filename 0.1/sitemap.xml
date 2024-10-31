@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://andrlik.github.io/django-prune-media/latest/</loc>
+         <lastmod>2024-10-31</lastmod>
+    </url>
+    <url>
+         <loc>https://andrlik.github.io/django-prune-media/latest/changelog/</loc>
+         <lastmod>2024-10-31</lastmod>
+    </url>
+    <url>
+         <loc>https://andrlik.github.io/django-prune-media/latest/code_of_conduct/</loc>
+         <lastmod>2024-10-31</lastmod>
+    </url>
+    <url>
+         <loc>https://andrlik.github.io/django-prune-media/latest/contributing/</loc>
+         <lastmod>2024-10-31</lastmod>
+    </url>
+    <url>
+         <loc>https://andrlik.github.io/django-prune-media/latest/security/</loc>
+         <lastmod>2024-10-31</lastmod>
+    </url>
+</urlset>
