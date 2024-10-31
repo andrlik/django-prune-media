@@ -2,7 +2,7 @@ site_name: Django Prune Media Documentation
 site_url: https://andrlik.github.io/django-prune-media/
 site_author: Daniel Andrlik
 copyright: Copyright &copy; 2024 Daniel Andrlik
-watch: [mkdocs.yml, README.md, CHANGELOG.md, CODE_OF_CONDUCT.md, SECURITY.md, src/podcast_analyzer]
+watch: [mkdocs.yml, README.md, CHANGELOG.md, CODE_OF_CONDUCT.md, SECURITY.md, src/prune_media]
 nav:
   - Home: index.md
   - Reference: reference/
