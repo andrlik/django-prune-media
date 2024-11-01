@@ -17,12 +17,6 @@ A Django app that provides management commands for pruning unused media files.
 [![Coverage Status](https://coveralls.io/repos/github/andrlik/django-prune-media/badge.svg?branch=main)](https://coveralls.io/github/andrlik/django-prune-media?branch=main)
 [![Documentation](https://img.shields.io/badge/docs-mkdocs-blue)](https://andrlik.github.io/django-prune-media/)
 
-## Why another app for this?
-
-Most of the apps I've found operate from the assumption that you are using Django's FileSystemStorage
-which is often not the case in production. This application solely uses the Django Storage API, which means
-it works for custom backends like Django Storages too.
-
 ## Installation
 
 ```bash
@@ -89,3 +83,24 @@ Usage: django-admin show_empty_media_dirs [OPTIONS]
 ╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
 ```
+
+## FAQ
+
+### Why another app for this?
+
+Most of the apps I've found operate from the assumption that you are using Django's FileSystemStorage
+which is often not the case in production. If you're hosting your media files via a CDN, `os.walk` is not going to work for you. 
+
+This application solely uses the Django [Storage API](https://docs.djangoproject.com/en/5.1/ref/files/storage/#the-storage-class), which means
+it works for custom backends like Django Storages too.
+
+### What are the limitations?
+
+Django's Storage API doesn't support deleting anything other than files, so you can end up with empty directories. This is why the `show_empty_media_dirs` command exists. When using the `--clean` option you can pipe the results to a command that's appropriate to your setup. 
+
+### Should I use this?
+
+🤷‍♂️ 
+
+I made this because I didn't want to keep copying this between projects. I want to make it as useful as possible though so contributions, even if it's only a failing test case for me to fix, are very welcome!
+
