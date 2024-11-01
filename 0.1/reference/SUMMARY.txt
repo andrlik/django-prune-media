@@ -1,0 +1,7 @@
+* prune_media
+    * [apps](prune_media/apps.md)
+    * management
+        * commands
+            * [prune_media](prune_media/management/commands/prune_media.md)
+            * [show_empty_media_dirs](prune_media/management/commands/show_empty_media_dirs.md)
+    * [utils](prune_media/utils.md)

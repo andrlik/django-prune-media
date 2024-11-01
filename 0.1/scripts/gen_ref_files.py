@@ -4,7 +4,7 @@ import mkdocs_gen_files
 
 nav = mkdocs_gen_files.Nav()  # type: ignore[attr-defined]
 
-for path in sorted(Path("src/podcast_analyzer").rglob("*.py")):
+for path in sorted(Path("src/prune_media").rglob("*.py")):
     module_path = path.with_suffix("")
     module_package_path = path.relative_to("src").with_suffix("")
     doc_path = path.relative_to("src").with_suffix(".md")

@@ -20,4 +20,20 @@
          <loc>https://andrlik.github.io/django-prune-media/latest/security/</loc>
          <lastmod>2024-11-01</lastmod>
     </url>
+    <url>
+         <loc>https://andrlik.github.io/django-prune-media/latest/reference/prune_media/apps/</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://andrlik.github.io/django-prune-media/latest/reference/prune_media/utils/</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://andrlik.github.io/django-prune-media/latest/reference/prune_media/management/commands/prune_media/</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://andrlik.github.io/django-prune-media/latest/reference/prune_media/management/commands/show_empty_media_dirs/</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
 </urlset>
