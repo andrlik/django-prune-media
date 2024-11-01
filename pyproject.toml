@@ -1,6 +1,6 @@
 [project]
 name = "django-prune-media"
-version = "0.1.0"
+version = "0.1.1"
 description = "Adds tools for pruning media files from your django project"
 authors = [{ name = "Daniel Andrlik", email = "daniel@andrlik.org" }]
 license = "BSD-3-Clause"
@@ -236,7 +236,7 @@ image_alt = true
 exclude_dirs = ["tests", "conftest.py"]
 
 [tool.bumpversion]
-current_version = "0.1.0"
+current_version = "0.1.1"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
 serialize = ["{major}.{minor}.{patch}"]
 search = "{current_version}"
