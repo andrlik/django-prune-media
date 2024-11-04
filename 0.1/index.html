@@ -855,7 +855,7 @@ i.e. not using a separate "staticfiles" entry in STORAGES, this can result in fa
 <h2 id="faq">FAQ</h2>
 <h3 id="why-another-app-for-this">Why another app for this?</h3>
 <p>Most of the apps I've found operate from the assumption that you are using Django's FileSystemStorage
-which is often not the case in production. If you're hosting your media files via a CDN, <code>os.walk</code> is not going to work for you.</p>
+which is often not the case in production. If you're hosting your media files via object storage at a CDN, <code>os.walk</code> is not going to work for you.</p>
 <p>This application solely uses the Django <a href="https://docs.djangoproject.com/en/5.1/ref/files/storage/#the-storage-class">Storage API</a>, which means
 it works for custom backends like Django Storages too.</p>
 <h3 id="what-are-the-limitations">What are the limitations?</h3>
