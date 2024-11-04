@@ -802,9 +802,8 @@
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This application assumes you are not using the same storage for your static and media files.
-It will look at whatever storage you have configured for <code>default</code>. If you are using a 
-different storage configuration, you can override this behavior using the storage config key
-in settings.py, e.g. <code>PRUNE_MEDIA_STORAGE_KEY="media"</code>.</p>
+It will look at whatever storage you have configured for <code>default</code>. If you are commingling them,
+i.e. not using a separate "staticfiles" entry in STORAGES, this can result in false positives.</p>
 </div>
 <p>Usage:</p>
 <p>To list or delete the media to be pruned:</p>
