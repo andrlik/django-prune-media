@@ -29,6 +29,12 @@ Add it to your settings.py.
 INSTALLED_APPS = [..., "prune_media", ...]
 ```
 
+!!! warning
+
+    This application assumes you are not using the same storage for your static and media files.
+    It will look at whatever storage you have configured for `default`. If you are commingling them,
+    i.e. not using a separate "staticfiles" entry in STORAGES, this can result in false positives.
+
 Usage:
 
 To list or delete the media to be pruned:
