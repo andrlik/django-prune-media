@@ -801,7 +801,7 @@
 </code></pre></div>
 <p>Usage:</p>
 <p>To list or delete the media to be pruned:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>manage.py<span class="w"> </span>prune_media<span class="w"> </span>--help
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>prune_media<span class="w"> </span>--help
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w"> </span>Usage:<span class="w"> </span>django-admin<span class="w"> </span>prune_media<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
@@ -824,7 +824,7 @@
 <a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 </code></pre></div>
 <p>Or to find empty directories:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>manage.py<span class="w"> </span>show_empty_media_dirs
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>show_empty_media_dirs
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Usage:<span class="w"> </span>django-admin<span class="w"> </span>show_empty_media_dirs<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
@@ -849,13 +849,13 @@
 <h2 id="faq">FAQ</h2>
 <h3 id="why-another-app-for-this">Why another app for this?</h3>
 <p>Most of the apps I've found operate from the assumption that you are using Django's FileSystemStorage
-which is often not the case in production. If you're hosting your media files via a CDN, <code>os.walk</code> is not going to work for you. </p>
+which is often not the case in production. If you're hosting your media files via a CDN, <code>os.walk</code> is not going to work for you.</p>
 <p>This application solely uses the Django <a href="https://docs.djangoproject.com/en/5.1/ref/files/storage/#the-storage-class">Storage API</a>, which means
 it works for custom backends like Django Storages too.</p>
 <h3 id="what-are-the-limitations">What are the limitations?</h3>
-<p>Django's Storage API doesn't support deleting anything other than files, so you can end up with empty directories. This is why the <code>show_empty_media_dirs</code> command exists. When using the <code>--clean</code> option you can pipe the results to a command that's appropriate to your setup. </p>
+<p>Django's Storage API doesn't support deleting anything other than files, so you can end up with empty directories. This is why the <code>show_empty_media_dirs</code> command exists. When using the <code>--clean</code> option you can pipe the results to a command that's appropriate to your setup.</p>
 <h3 id="should-i-use-this">Should I use this?</h3>
-<p>🤷‍♂️ </p>
+<p>🤷‍♂️</p>
 <p>I made this because I didn't want to keep copying this between projects. I want to make it as useful as possible though so contributions, even if it's only a failing test case for me to fix, are very welcome!</p>
 
 

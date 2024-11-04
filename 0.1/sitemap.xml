@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://andrlik.github.io/django-prune-media/latest/</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
     <url>
          <loc>https://andrlik.github.io/django-prune-media/latest/changelog/</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
     <url>
          <loc>https://andrlik.github.io/django-prune-media/latest/code_of_conduct/</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
     <url>
          <loc>https://andrlik.github.io/django-prune-media/latest/contributing/</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
     <url>
          <loc>https://andrlik.github.io/django-prune-media/latest/security/</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
     <url>
          <loc>https://andrlik.github.io/django-prune-media/latest/reference/prune_media/apps/</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
     <url>
          <loc>https://andrlik.github.io/django-prune-media/latest/reference/prune_media/utils/</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
     <url>
          <loc>https://andrlik.github.io/django-prune-media/latest/reference/prune_media/management/commands/prune_media/</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
     <url>
          <loc>https://andrlik.github.io/django-prune-media/latest/reference/prune_media/management/commands/show_empty_media_dirs/</loc>
-         <lastmod>2024-11-01</lastmod>
+         <lastmod>2024-11-04</lastmod>
     </url>
 </urlset>
