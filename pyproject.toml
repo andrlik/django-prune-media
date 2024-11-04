@@ -254,7 +254,7 @@ pre_commit_hooks = ["uv sync", "git add uv.lock"]
 commit_args = ""
 
 [[tool.bumpversion.files]]
-filename = "src/purge_media/__init__.py"
+filename = "src/prune_media/__init__.py"
 search = "__version__ = \"{current_version}\""
 replace =  "__version__ = \"{new_version}\""
 
