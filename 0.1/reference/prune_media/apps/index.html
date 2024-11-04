@@ -390,6 +390,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#src.prune_media.apps.PruneMediaConfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      PruneMediaConfig
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#src.prune_media.apps.check_for_media" class="md-nav__link">
     <span class="md-ellipsis">
       check_for_media
@@ -685,6 +694,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#src.prune_media.apps.PruneMediaConfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      PruneMediaConfig
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#src.prune_media.apps.check_for_media" class="md-nav__link">
     <span class="md-ellipsis">
       check_for_media
@@ -736,6 +754,50 @@
 
 
 
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.prune_media.apps.PruneMediaConfig" class="doc doc-heading">
+            <span class="doc doc-object-name doc-class-name">PruneMediaConfig</span>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="django.apps.AppConfig">AppConfig</span></code></p>
+
+
+        <p>App config for django-prune-media.</p>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -755,8 +817,7 @@ configured storage backend has implemented listdir.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/prune_media/apps.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-18">18</a></span>
 <span class="normal"><a href="#__codelineno-0-19">19</a></span>
 <span class="normal"><a href="#__codelineno-0-20">20</a></span>
 <span class="normal"><a href="#__codelineno-0-21">21</a></span>
@@ -768,20 +829,21 @@ configured storage backend has implemented listdir.</p>
 <span class="normal"><a href="#__codelineno-0-27">27</a></span>
 <span class="normal"><a href="#__codelineno-0-28">28</a></span>
 <span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="nd">@register</span><span class="p">()</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="k">def</span> <span class="nf">check_for_media</span><span class="p">(</span><span class="n">app_configs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c1"># noqa: ARG001</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Run checks to ensure that MEDIA_ROOT exists and that the</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="sd">    configured storage backend has implemented listdir.&quot;&quot;&quot;</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a>    <span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a>    <span class="k">try</span><span class="p">:</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a>        <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="o">=</span> <span class="n">default_storage</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a>    <span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">fnf</span><span class="p">:</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a>        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Your media root does not exist!&quot;</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a>        <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Error</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">hint</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">fnf</span><span class="p">)))</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a>    <span class="k">except</span> <span class="ne">NotImplementedError</span> <span class="k">as</span> <span class="n">nie</span><span class="p">:</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a>        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Your storage backend does not support listdir!&quot;</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a>        <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Error</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">hint</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">nie</span><span class="p">)))</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a>    <span class="k">return</span> <span class="n">errors</span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="nd">@register</span><span class="p">()</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="k">def</span> <span class="nf">check_for_media</span><span class="p">(</span><span class="n">app_configs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c1"># noqa: ARG001</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Run checks to ensure that MEDIA_ROOT exists and that the</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="sd">    configured storage backend has implemented listdir.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>    <span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>        <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="o">=</span> <span class="n">default_storage</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a>    <span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">fnf</span><span class="p">:</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Your media root does not exist!&quot;</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>        <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Error</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">hint</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">fnf</span><span class="p">)))</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>    <span class="k">except</span> <span class="ne">NotImplementedError</span> <span class="k">as</span> <span class="n">nie</span><span class="p">:</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a>        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Your storage backend does not support listdir!&quot;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>        <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Error</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">hint</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">nie</span><span class="p">)))</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a>    <span class="k">return</span> <span class="n">errors</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
