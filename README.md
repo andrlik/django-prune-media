@@ -34,7 +34,7 @@ Usage:
 To list or delete the media to be pruned:
 
 ```bash
-python manage.py prune_media --help
+$ python manage.py prune_media --help
 
  Usage: django-admin prune_media [OPTIONS]
 
@@ -60,7 +60,7 @@ python manage.py prune_media --help
 Or to find empty directories:
 
 ```bash
-python manage.py show_empty_media_dirs
+$ python manage.py show_empty_media_dirs
 
 Usage: django-admin show_empty_media_dirs [OPTIONS]
 
@@ -89,18 +89,17 @@ Usage: django-admin show_empty_media_dirs [OPTIONS]
 ### Why another app for this?
 
 Most of the apps I've found operate from the assumption that you are using Django's FileSystemStorage
-which is often not the case in production. If you're hosting your media files via a CDN, `os.walk` is not going to work for you. 
+which is often not the case in production. If you're hosting your media files via a CDN, `os.walk` is not going to work for you.
 
 This application solely uses the Django [Storage API](https://docs.djangoproject.com/en/5.1/ref/files/storage/#the-storage-class), which means
 it works for custom backends like Django Storages too.
 
 ### What are the limitations?
 
-Django's Storage API doesn't support deleting anything other than files, so you can end up with empty directories. This is why the `show_empty_media_dirs` command exists. When using the `--clean` option you can pipe the results to a command that's appropriate to your setup. 
+Django's Storage API doesn't support deleting anything other than files, so you can end up with empty directories. This is why the `show_empty_media_dirs` command exists. When using the `--clean` option you can pipe the results to a command that's appropriate to your setup.
 
 ### Should I use this?
 
-🤷‍♂️ 
+🤷‍♂️
 
 I made this because I didn't want to keep copying this between projects. I want to make it as useful as possible though so contributions, even if it's only a failing test case for me to fix, are very welcome!
-
