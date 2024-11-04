@@ -105,7 +105,7 @@ manage *ARGS: check
 
 # Access mkdocs commands
 docs *ARGS: check
-    uv run --frozen mike {{ ARGS }}
+    uv run --no-sync mike {{ ARGS }}
 
 # Build Python package
 build *ARGS: check
