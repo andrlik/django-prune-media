@@ -799,6 +799,13 @@
 <p>Add it to your settings.py.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="s2">&quot;prune_media&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This application assumes you are not using the same storage for your static and media files.
+It will look at whatever storage you have configured for <code>default</code>. If you are using a 
+different storage configuration, you can override this behavior using the storage config key
+in settings.py, e.g. <code>PRUNE_MEDIA_STORAGE_KEY="media"</code>.</p>
+</div>
 <p>Usage:</p>
 <p>To list or delete the media to be pruned:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>prune_media<span class="w"> </span>--help
