@@ -32,6 +32,10 @@ def show_empty_media_dirs(
 
     The storage API does not support deletion of directories but at least this
     way you know what can be removed.
+
+    Args:
+        clean (bool): Display the list of empty media directories with no formatting or
+            additional text so that it can be piped to another command.
     """
     empty_dirs = get_empty_media_directories(storage_backend=default_storage)
     if not empty_dirs:

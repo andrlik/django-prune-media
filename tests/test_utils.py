@@ -6,6 +6,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 from prune_media.utils import (
+    FieldListing,
     get_all_file_fields,
     get_empty_media_directories,
     get_media_paths,
@@ -17,8 +18,14 @@ from prune_media.utils import (
 def test_get_all_file_fields():
     fields = get_all_file_fields()
     assert len(fields) == 2
-    assert ("sample_app", "record", "image") in fields
-    assert ("sample_app", "record", "document") in fields
+    assert (
+        FieldListing(app_label="sample_app", model_name="record", field_name="image")
+        in fields
+    )
+    assert (
+        FieldListing(app_label="sample_app", model_name="record", field_name="document")
+        in fields
+    )
 
 
 def test_get_referenced_file_paths(record_with_files):

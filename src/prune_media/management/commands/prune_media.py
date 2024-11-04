@@ -32,7 +32,14 @@ def prune_media(
         typer.Option(help=_("Do a dry-run without deleting anything."), is_flag=True),
     ] = False,
 ) -> None:
-    """Remove unreferenced media files to save space."""
+    """Remove unreferenced media files to save space.
+
+    Args:
+        no_interaction (bool): Do not prompt the user for confirmation before proceeding
+            to deletion.
+        dry_run (bool): Don't delete anything, just display what would be done.
+
+    """
     file_paths = get_unreferenced_media_paths()
     if len(file_paths) == 0:
         self.secho(_("No unreferenced media files found! :-)"), fg=typer.colors.GREEN)

@@ -95,7 +95,7 @@ Usage: django-admin show_empty_media_dirs [OPTIONS]
 ### Why another app for this?
 
 Most of the apps I've found operate from the assumption that you are using Django's FileSystemStorage
-which is often not the case in production. If you're hosting your media files via a CDN, `os.walk` is not going to work for you.
+which is often not the case in production. If you're hosting your media files via object storage at a CDN, `os.walk` is not going to work for you.
 
 This application solely uses the Django [Storage API](https://docs.djangoproject.com/en/5.1/ref/files/storage/#the-storage-class), which means
 it works for custom backends like Django Storages too.

@@ -11,11 +11,15 @@ from django.core.files.storage import default_storage
 
 
 class PruneMediaConfig(AppConfig):
+    """App config for django-prune-media."""
+
     name = "prune_media"
 
 
 @register()
 def check_for_media(app_configs, **kwargs):  # noqa: ARG001
+    """Run checks to ensure that MEDIA_ROOT exists and that the
+    configured storage backend has implemented listdir."""
     errors = []
     try:
         dirs, files = default_storage.listdir(".")
