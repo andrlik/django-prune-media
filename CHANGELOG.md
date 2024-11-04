@@ -2,7 +2,7 @@
 
 ## 0.1.2
 
-[Compare the full difference](https://github.com/andrlik/django-prune-media/compare/v0.1.1...HEAD)
+[Compare the full difference](https://github.com/andrlik/django-prune-media/compare/v0.1.1...v0.1.2)
 
 - Add important warning to README for any install.
 
