@@ -17,6 +17,7 @@ classifiers = [
     "Framework :: Django",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.12",
+    "Development Status :: 4 - Beta",
 ]
 
 [project.urls]
