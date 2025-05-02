@@ -13,6 +13,7 @@ dependencies = [
 classifiers = [
     "Framework :: Django :: 5.0",
     "Framework :: Django :: 5.1",
+    "Framework :: Django :: 5.2",
     "License :: OSI Approved :: BSD License",
     "Framework :: Django",
     "Programming Language :: Python :: 3.13",
