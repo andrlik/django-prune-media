@@ -1,6 +1,6 @@
 # prune_media.py
 #
-# Copyright (c) 2024 Daniel Andrlik
+# Copyright (c) 2024 - 2025 Daniel Andrlik
 # All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
@@ -18,7 +18,7 @@ from prune_media.utils import get_unreferenced_media_paths
 app = Typer()
 
 
-@app.command()
+@app.command(help=_("Remove unreferenced media files to save space."))
 def prune_media(
     self,
     no_interaction: Annotated[  # noqa: FBT002

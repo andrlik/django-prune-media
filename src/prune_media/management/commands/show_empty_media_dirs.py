@@ -1,6 +1,6 @@
 # show_empty_media_dirs.py
 #
-# Copyright (c) 2024 Daniel Andrlik
+# Copyright (c) 2024 - 2025 Daniel Andrlik
 # All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
@@ -17,7 +17,9 @@ from prune_media.utils import get_empty_media_directories
 app = Typer()
 
 
-@app.command()
+@app.command(help=_(
+    "List empty media directories for review or to pipe to another command."
+))
 def show_empty_media_dirs(
     self,
     clean: Annotated[  # noqa: FBT002
