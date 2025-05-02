@@ -35,7 +35,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         python-version: [ "3.12", "3.13" ]
-        django-version: ["5.0", "5.1"]
+        django-version: ["5.0", "5.1", "5.2"]
 
     steps:
 
