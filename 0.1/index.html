@@ -808,50 +808,73 @@ i.e. not using a separate "staticfiles" entry in STORAGES, this can result in fa
 <p>Usage:</p>
 <p>To list or delete the media to be pruned:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>prune_media<span class="w"> </span>--help
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w"> </span>Usage:<span class="w"> </span>django-admin<span class="w"> </span>prune_media<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w"> </span>Remove<span class="w"> </span>unreferenced<span class="w"> </span>media<span class="w"> </span>files<span class="w"> </span>to<span class="w"> </span>save<span class="w"> </span>space.
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>╭─<span class="w"> </span>Options<span class="w"> </span>─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│<span class="w"> </span>--no-interaction<span class="w">    </span>--no-no-interaction<span class="w">      </span>Don<span class="s1">&#39;t ask for confirmation before deleting. [default: no-no-interaction]             │</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="s1">│ --dry-run           --no-dry-run             Do a dry-run without deleting anything. [default: no-dry-run]                        │</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="s1">│ --help                                       Show this message and exit.                                                          │</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="s1">╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="s1">╭─ Django ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="s1">│ --version                  Show program&#39;</span>s<span class="w"> </span>version<span class="w"> </span>number<span class="w"> </span>and<span class="w"> </span>exit.<span class="w">                                                                </span>│
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>│<span class="w"> </span>--settings<span class="w">           </span>TEXT<span class="w">  </span>The<span class="w"> </span>Python<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>settings<span class="w"> </span>module,<span class="w"> </span>e.g.<span class="w"> </span><span class="s2">&quot;myproject.settings.main&quot;</span>.<span class="w"> </span>If<span class="w"> </span>this<span class="w"> </span>isn<span class="s1">&#39;t provided, the      │</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="s1">│                            DJANGO_SETTINGS_MODULE environment variable will be used.                                              │</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="s1">│ --pythonpath         PATH  A directory to add to the Python path, e.g. &quot;/home/djangoprojects/myproject&quot;. [default: None]          │</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="s1">│ --traceback                Raise on CommandError exceptions                                                                       │</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="s1">│ --no-color                 Don&#39;</span>t<span class="w"> </span>colorize<span class="w"> </span>the<span class="w"> </span><span class="nb">command</span><span class="w"> </span>output.<span class="w">                                                                     </span>│
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>│<span class="w"> </span>--force-color<span class="w">              </span>Force<span class="w"> </span>colorization<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span><span class="nb">command</span><span class="w"> </span>output.<span class="w">                                                              </span>│
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>│<span class="w"> </span>--skip-checks<span class="w">              </span>Skip<span class="w"> </span>system<span class="w"> </span>checks.<span class="w">                                                                                    </span>│
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 </code></pre></div>
-<p>Or to find empty directories:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>show_empty_media_dirs
+<!-- [[[cog
+import subprocess
+import cog
+
+list = subprocess.run(["just", "manage", "prune_media", "--help"], stdout=subprocess.PIPE)
+cog.out(
+    f"```\n{list.stdout.decode('utf-8')}```"
+)
+]]] -->
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a> Usage: django-admin prune_media [OPTIONS]
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Usage:<span class="w"> </span>django-admin<span class="w"> </span>show_empty_media_dirs<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a> Remove unreferenced media files to save space.
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w"> </span>List<span class="w"> </span>empty<span class="w"> </span>media<span class="w"> </span>directories.
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w"> </span>The<span class="w"> </span>storage<span class="w"> </span>API<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>support<span class="w"> </span>deletion<span class="w"> </span>of<span class="w"> </span>directories<span class="w"> </span>but<span class="w"> </span>at<span class="w"> </span>least<span class="w"> </span>this<span class="w"> </span>way<span class="w"> </span>you<span class="w"> </span>know<span class="w"> </span>what<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>removed.
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>╭─<span class="w"> </span>Options<span class="w"> </span>─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│<span class="w"> </span>--clean<span class="w">    </span>--no-clean<span class="w">      </span>Print<span class="w"> </span>paths<span class="w"> </span>only<span class="w"> </span>so<span class="w"> </span>they<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>piped<span class="w"> </span>to<span class="w"> </span>other<span class="w"> </span>commands<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>no-clean<span class="o">]</span><span class="w">                            </span>│
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>│<span class="w"> </span>--help<span class="w">                     </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.<span class="w">                                                                            </span>│
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>╭─<span class="w"> </span>Django<span class="w"> </span>──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>│<span class="w"> </span>--version<span class="w">                  </span>Show<span class="w"> </span>program<span class="s1">&#39;s version number and exit.                                                                │</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="s1">│ --settings           TEXT  The Python path to a settings module, e.g. &quot;myproject.settings.main&quot;. If this isn&#39;</span>t<span class="w"> </span>provided,<span class="w"> </span>the<span class="w">      </span>│
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>│<span class="w">                            </span>DJANGO_SETTINGS_MODULE<span class="w"> </span>environment<span class="w"> </span>variable<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>used.<span class="w">                                              </span>│
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>│<span class="w"> </span>--pythonpath<span class="w">         </span>PATH<span class="w">  </span>A<span class="w"> </span>directory<span class="w"> </span>to<span class="w"> </span>add<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>Python<span class="w"> </span>path,<span class="w"> </span>e.g.<span class="w"> </span><span class="s2">&quot;/home/djangoprojects/myproject&quot;</span>.<span class="w"> </span><span class="o">[</span>default:<span class="w"> </span>None<span class="o">]</span><span class="w">          </span>│
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>│<span class="w"> </span>--traceback<span class="w">                </span>Raise<span class="w"> </span>on<span class="w"> </span>CommandError<span class="w"> </span>exceptions<span class="w">                                                                       </span>│
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>│<span class="w"> </span>--no-color<span class="w">                 </span>Don<span class="err">&#39;</span>t<span class="w"> </span>colorize<span class="w"> </span>the<span class="w"> </span><span class="nb">command</span><span class="w"> </span>output.<span class="w">                                                                     </span>│
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>│<span class="w"> </span>--force-color<span class="w">              </span>Force<span class="w"> </span>colorization<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span><span class="nb">command</span><span class="w"> </span>output.<span class="w">                                                              </span>│
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>│<span class="w"> </span>--skip-checks<span class="w">              </span>Skip<span class="w"> </span>system<span class="w"> </span>checks.<span class="w">                                                                                    </span>│
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│ --no-interaction    --no-no-interaction      Don&#39;t ask for confirmation before deleting. [default: no-no-interaction]   │
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│ --dry-run           --no-dry-run             Do a dry-run without deleting anything. [default: no-dry-run]              │
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│ --help                                       Show this message and exit.                                                │
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>╭─ Django ────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>│ --version                  Show program&#39;s version number and exit.                                                      │
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>│ --settings           TEXT  The Python path to a settings module, e.g. &quot;myproject.settings.main&quot;. If this isn&#39;t          │
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>│                            provided, the DJANGO_SETTINGS_MODULE environment variable will be used.                      │
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>│ --pythonpath         PATH  A directory to add to the Python path, e.g. &quot;/home/djangoprojects/myproject&quot;.                │
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>│                            [default: None]                                                                              │
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>│ --traceback                Raise on CommandError exceptions                                                             │
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>│ --no-color                 Don&#39;t colorize the command output.                                                           │
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>│ --force-color              Force colorization of the command output.                                                    │
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>│ --skip-checks              Skip system checks.                                                                          │
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 </code></pre></div>
+<!-- [[[end]]] -->
+
+<p>Or to find empty directories:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>show_empty_media_dirs<span class="w"> </span>--help
+</code></pre></div>
+<!-- [[[cog
+import subprocess
+import cog
+
+list = subprocess.run(["just", "manage", "show_empty_media_dirs", "--help"], stdout=subprocess.PIPE)
+cog.out(
+    f"```\n{list.stdout.decode('utf-8')}```"
+)
+]]] -->
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a> Usage: django-admin show_empty_media_dirs [OPTIONS]
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a> List empty media directories for review or to pipe to another command.
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>│ --clean    --no-clean      Print paths only so they can be piped to other commands [default: no-clean]                  │
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>│ --help                     Show this message and exit.                                                                  │
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>╭─ Django ────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>│ --version                  Show program&#39;s version number and exit.                                                      │
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>│ --settings           TEXT  The Python path to a settings module, e.g. &quot;myproject.settings.main&quot;. If this isn&#39;t          │
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>│                            provided, the DJANGO_SETTINGS_MODULE environment variable will be used.                      │
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>│ --pythonpath         PATH  A directory to add to the Python path, e.g. &quot;/home/djangoprojects/myproject&quot;.                │
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>│                            [default: None]                                                                              │
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>│ --traceback                Raise on CommandError exceptions                                                             │
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>│ --no-color                 Don&#39;t colorize the command output.                                                           │
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>│ --force-color              Force colorization of the command output.                                                    │
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>│ --skip-checks              Skip system checks.                                                                          │
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+</code></pre></div>
+<!-- [[[end]]] -->
+
 <h2 id="faq">FAQ</h2>
 <h3 id="why-another-app-for-this">Why another app for this?</h3>
 <p>Most of the apps I've found operate from the assumption that you are using Django's FileSystemStorage
