@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+[Compare the full difference](https://github.com/andrlik/django-prune-media/compare/v0.1.4...HEAD)
+
+- Officially support Django 5.2.
+
 ## 0.1.4
 
 [Compare the full difference](https://github.com/andrlik/django-prune-media/compare/v0.1.3...v0.1.4)
