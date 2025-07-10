@@ -27,6 +27,7 @@ Available recipes:
     fresh        # Destroy and recreate environment from scratch.
 
     [qa]
+    check-all    # Run tests, check types, perform linting, and security checks.
     check-types  # Check types
     fmt          # Run just formatter and ruff formatter.
     lint *ARGS   # Run ruff linting
@@ -52,7 +53,7 @@ If you don't have `uv`, you should install with `just uv-install`.
 
 To install dependencies and prepare [`pre-commit`](https://pre-commit.com/) hooks you would need to run the `setup` command:
 
-```bash
+```shell
 just bootstrap
 ```
 
@@ -64,7 +65,7 @@ After pulling new updates from the repository you can quickly install updated de
 
 After installation you may execute code formatting.
 
-```bash
+```shell
 just fmt
 ```
 
@@ -74,25 +75,25 @@ Many checks are configured for this project.
 
 To run your test suite:
 
-```bash
+```shell
 just test
 ```
 
 Or you can run testing for linting and multiple supported Python versions via:
 
-```bash
+```shell
 just tox
 ```
 
 To use pyright for type checking run:
-```bash
+```shell
 just check-types
 ```
 
 To run linting:
 
-```bash
-just check
+```shell
+just lint
 ```
 
 The `just safety` command will look at the security of your code.
@@ -105,7 +106,7 @@ Before submitting your code please do the following steps:
 2. Add tests for the new changes
 3. Edit documentation if you have changed something significant
 4. Run `just fmt` to format your changes.
-5. Run `just check` to ensure that types, security and docstrings are okay.
+5. Run `just check-all` to ensure that types, security and docstrings are okay.
 
 ## Other help
 

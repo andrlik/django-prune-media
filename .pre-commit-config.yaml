@@ -20,6 +20,7 @@ repos:
       - id: detect-aws-credentials
       - id: detect-private-key
       - id: trailing-whitespace
+        exclude: "README.md"
       - id: end-of-file-fixer
       - id: requirements-txt-fixer
 

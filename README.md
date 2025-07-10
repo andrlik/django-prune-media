@@ -52,27 +52,34 @@ cog.out(
 )
 ]]] -->
 ```
-
- Usage: django-admin prune_media [OPTIONS]
-
- Remove unreferenced media files to save space.
-
-╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│ --no-interaction    --no-no-interaction      Don't ask for confirmation before deleting. [default: no-no-interaction]   │
-│ --dry-run           --no-dry-run             Do a dry-run without deleting anything. [default: no-dry-run]              │
-│ --help                                       Show this message and exit.                                                │
-╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
-╭─ Django ────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│ --version                  Show program's version number and exit.                                                      │
-│ --settings           TEXT  The Python path to a settings module, e.g. "myproject.settings.main". If this isn't          │
-│                            provided, the DJANGO_SETTINGS_MODULE environment variable will be used.                      │
-│ --pythonpath         PATH  A directory to add to the Python path, e.g. "/home/djangoprojects/myproject".                │
-│                            [default: None]                                                                              │
-│ --traceback                Raise on CommandError exceptions                                                             │
-│ --no-color                 Don't colorize the command output.                                                           │
-│ --force-color              Force colorization of the command output.                                                    │
-│ --skip-checks              Skip system checks.                                                                          │
-╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+                                                                                
+ Usage: django-admin prune_media [OPTIONS]                                      
+                                                                                
+ Remove unreferenced media files to save space.                                 
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --no-interaction    --no-no-interaction      Don't ask for confirmation      │
+│                                              before deleting.                │
+│                                              [default: no-no-interaction]    │
+│ --dry-run           --no-dry-run             Do a dry-run without deleting   │
+│                                              anything.                       │
+│                                              [default: no-dry-run]           │
+│ --help                                       Show this message and exit.     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Django ─────────────────────────────────────────────────────────────────────╮
+│ --version                  Show program's version number and exit.           │
+│ --settings           TEXT  The Python path to a settings module, e.g.        │
+│                            "myproject.settings.main". If this isn't          │
+│                            provided, the DJANGO_SETTINGS_MODULE environment  │
+│                            variable will be used.                            │
+│ --pythonpath         PATH  A directory to add to the Python path, e.g.       │
+│                            "/home/djangoprojects/myproject".                 │
+│                            [default: None]                                   │
+│ --traceback                Raise on CommandError exceptions                  │
+│ --no-color                 Don't colorize the command output.                │
+│ --force-color              Force colorization of the command output.         │
+│ --skip-checks              Skip system checks.                               │
+╰──────────────────────────────────────────────────────────────────────────────╯
 
 ```
 <!-- [[[end]]] -->
@@ -92,26 +99,31 @@ cog.out(
 )
 ]]] -->
 ```
-
- Usage: django-admin show_empty_media_dirs [OPTIONS]
-
- List empty media directories for review or to pipe to another command.
-
-╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│ --clean    --no-clean      Print paths only so they can be piped to other commands [default: no-clean]                  │
-│ --help                     Show this message and exit.                                                                  │
-╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
-╭─ Django ────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│ --version                  Show program's version number and exit.                                                      │
-│ --settings           TEXT  The Python path to a settings module, e.g. "myproject.settings.main". If this isn't          │
-│                            provided, the DJANGO_SETTINGS_MODULE environment variable will be used.                      │
-│ --pythonpath         PATH  A directory to add to the Python path, e.g. "/home/djangoprojects/myproject".                │
-│                            [default: None]                                                                              │
-│ --traceback                Raise on CommandError exceptions                                                             │
-│ --no-color                 Don't colorize the command output.                                                           │
-│ --force-color              Force colorization of the command output.                                                    │
-│ --skip-checks              Skip system checks.                                                                          │
-╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+                                                                                
+ Usage: django-admin show_empty_media_dirs [OPTIONS]                            
+                                                                                
+ List empty media directories for review or to pipe to another command.         
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --clean    --no-clean      Print paths only so they can be piped to other    │
+│                            commands                                          │
+│                            [default: no-clean]                               │
+│ --help                     Show this message and exit.                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Django ─────────────────────────────────────────────────────────────────────╮
+│ --version                  Show program's version number and exit.           │
+│ --settings           TEXT  The Python path to a settings module, e.g.        │
+│                            "myproject.settings.main". If this isn't          │
+│                            provided, the DJANGO_SETTINGS_MODULE environment  │
+│                            variable will be used.                            │
+│ --pythonpath         PATH  A directory to add to the Python path, e.g.       │
+│                            "/home/djangoprojects/myproject".                 │
+│                            [default: None]                                   │
+│ --traceback                Raise on CommandError exceptions                  │
+│ --no-color                 Don't colorize the command output.                │
+│ --force-color              Force colorization of the command output.         │
+│ --skip-checks              Skip system checks.                               │
+╰──────────────────────────────────────────────────────────────────────────────╯
 
 ```
 <!-- [[[end]]] -->

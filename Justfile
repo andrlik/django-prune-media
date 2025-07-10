@@ -86,6 +86,11 @@ _check: _check-env _check-pre-commit
       exit 1
     fi
 
+# Run tests, check types, perform linting, and security checks.
+[group('qa')]
+@check-all: _check test lint check-types safety
+    echo "All checks complete!"
+
 # Check types
 [group('qa')]
 check-types: _check
