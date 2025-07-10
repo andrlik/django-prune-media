@@ -6,6 +6,45 @@ Contributions to either the code, localization, or the documentation are very we
 
 We use [`just`](https://github.com/casey/just) to execute common tasks. It is available for any platform. Once installed, you can see a list of available commands by running `just --list`.
 
+<!-- [[[cog
+import subprocess
+import cog
+
+list = subprocess.run(["just"], stdout=subprocess.PIPE)
+cog.out(
+    f"```\n{list.stdout.decode('utf-8')}```"
+)
+]]] -->
+```
+Available recipes:
+    help         # Lists all available commands.
+
+    [lifecycle]
+    bootstrap    # Setup the project and update dependencies.
+    build *ARGS  # Build Python package
+    clean        # Removes pycache directories and files, and generated builds.
+    docs *ARGS   # Access mkdocs commands
+    fresh        # Destroy and recreate environment from scratch.
+
+    [qa]
+    check-types  # Check types
+    fmt          # Run just formatter and ruff formatter.
+    lint *ARGS   # Run ruff linting
+    safety       # Runs bandit safety checks.
+    test *ARGS   # Run the test suite
+    tox *ARGS    # Run tox for code style, type checking, and multi-python tests. Uses run-parallel.
+
+    [run]
+    manage *ARGS # Access Django management commands.
+    server       # Run a devserver and worker cluster
+
+    [uv]
+    uv-install   # Downloads and installs uv on your system.
+    uv-uninstall # Uninstall uv
+    uv-update    # Update uv
+```
+<!-- [[[end]]] -->
+
 ## Dependencies
 
 We use `uv` to manage the Python [dependencies](https://rye-up.com).
@@ -67,7 +106,6 @@ Before submitting your code please do the following steps:
 3. Edit documentation if you have changed something significant
 4. Run `just fmt` to format your changes.
 5. Run `just check` to ensure that types, security and docstrings are okay.
-6. Add your name to the `CONTRIBUTERS.txt` file.
 
 ## Other help
 

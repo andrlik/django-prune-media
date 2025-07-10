@@ -1,30 +1,35 @@
 set dotenv-load := true
+set unstable := true
 
 # Lists all available commands.
-help:
+@help:
     just --list
 
-# Update README cli output examples.
-_cog:
-    uv run --with cogapp cog -r README.md
+# Run cog against necessary documentation files.
+@_cog:
+    uvx --from cogapp cog -r README.md
+    uvx --from cogapp cog -r CONTRIBUTING.md
 
 # ---------------------------------------------- #
 # Script to rule them all recipes.               #
 # ---------------------------------------------- #
 
 # Install pre-commit hooks
+[script]
 _install-pre-commit: _check-pre-commit
-    #!/usr/bin/env bash
     if [[ ! -f .git/hooks/pre-commit ]]; then
       echo "Pre-commit hooks are not installed yet! Doing so now."
       pre-commit install
     fi
     exit 0
 
-# Downloads and installs uv on your system. If on Windows, follow the directions at https://docs.astral.sh/uv/getting-started/installation/ instead.
+# Downloads and installs uv on your system.
+[group('uv')]
+[linux]
+[macos]
+[script]
+[unix]
 uv-install:
-    #!/usr/bin/env bash
-    set -euo pipefail
     if ! command -v uv &> /dev/null;
     then
       echo "uv is not found on path! Starting install..."
@@ -33,35 +38,44 @@ uv-install:
       uv self update
     fi
 
+# Downloads and installs uv on your system
+[group('uv')]
+[script]
+[windows]
+uv-install:
+    powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
 # Update uv
+[group('uv')]
 uv-update:
     uv self update
 
 # Uninstall uv
+[group('uv')]
 uv-uninstall:
     uv self uninstall
 
+[script]
 _check-pre-commit:
-    #!/usr/bin/env bash
     if ! command -v pre-commit &> /dev/null; then
       echo "Pre-commit is not installed!"
       exit 1
     fi
 
+[script]
 _check-env:
-    #!/usr/bin/env bash
     if [[ -z "$DJANGO_DEBUG" ]]; then
       echo "DJANGO_DEBUG is not set and application will run in production mode." >&2
     fi
 
 # Setup the project and update dependencies.
+[group('lifecycle')]
 bootstrap: uv-install _install-pre-commit _check-env
-    #!/usr/bin/env bash
     uv sync
-    DJANGO_SETTINGS_MODULE="tests.settings" PYTHONPATH="$PYTHONPATH:$(pwd)" uv run django-admin migrate
+    just manage migrate
 
 # Checks that project is ready for development.
-check: _check-env _check-pre-commit
+_check: _check-env _check-pre-commit
     #!/usr/bin/env bash
     if ! command -v uv &> /dev/null; then
       echo "UV is not installed!"
@@ -73,46 +87,56 @@ check: _check-env _check-pre-commit
     fi
 
 # Check types
-check-types: check
+[group('qa')]
+check-types: _check
     uv run pyright
 
 # Run a devserver and worker cluster
+[group('run')]
 server:
     #!/usr/bin/env bash
     DJANGO_SETTINGS_MODULE="tests.settings" PYTHONPATH="$PYTHONPATH:$(pwd)" uv run django-admin runserver
 
-# Run just formatter and rye formatter.
-fmt: check
+# Run just formatter and ruff formatter.
+[group('qa')]
+fmt: _check
     just --fmt --unstable
-    uv run ruff format
+    uv run -m ruff format
 
 # Run ruff linting
-lint *ARGS: check
+[group('qa')]
+lint *ARGS: _check
     uv run ruff check {{ ARGS }} src
 
 # Run the test suite
-test *ARGS: check
+[group('qa')]
+test *ARGS: _check
     uv run -m pytest {{ ARGS }}
 
 # Run tox for code style, type checking, and multi-python tests. Uses run-parallel.
-tox *ARGS: check
-    uvx --python 3.12 --with tox-uv tox {{ ARGS }}
+[group('qa')]
+tox *ARGS: _check
+    uvx --python 3.12 --with tox-uv tox run-parallel {{ ARGS }}
 
 # Runs bandit safety checks.
-safety: check
+[group('qa')]
+safety: _check
     uv run -m bandit -c pyproject.toml -r src
 
 # Access Django management commands.
-manage *ARGS: check
-    #!/usr/bin/env bash
+[group('run')]
+[script('bash')]
+manage *ARGS: _check
     DJANGO_SETTINGS_MODULE="tests.settings" PYTHONPATH="$PYTHONPATH:$(pwd)" uv run django-admin {{ ARGS }}
 
 # Access mkdocs commands
-docs *ARGS: check
+[group('lifecycle')]
+@docs *ARGS: _check
     uv run --no-sync mike {{ ARGS }}
 
 # Build Python package
-build *ARGS: check
+[group('lifecycle')]
+@build *ARGS: _check
     uv build {{ ARGS }}
 
 # Removes pycache directories and files.
@@ -127,5 +151,19 @@ _build-remove:
 _docs-clean:
     rm -rf site/*
 
+# Remove qa caches
+_qa-cache-clean:
+    rm -rf .ruff_cache .pytest_cache
+
+# Remove generated virtualenvs
+_venv-clean:
+    rm -rf .venv .tox
+
 # Removes pycache directories and files, and generated builds.
-clean: _pycache-remove _build-remove _docs-clean
+[group('lifecycle')]
+clean: _pycache-remove _build-remove _docs-clean _qa-cache-clean
+
+# Destroy and recreate environment from scratch.
+[group('lifecycle')]
+fresh: clean _venv-clean && bootstrap
+    @echo "Removed old environments and caches! Recreating..."
