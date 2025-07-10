@@ -839,21 +839,22 @@ cog.out(
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    fresh        # Destroy and recreate environment from scratch.
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    [qa]
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    check-types  # Check types
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    fmt          # Run just formatter and ruff formatter.
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    lint *ARGS   # Run ruff linting
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    safety       # Runs bandit safety checks.
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    test *ARGS   # Run the test suite
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    tox *ARGS    # Run tox for code style, type checking, and multi-python tests. Uses run-parallel.
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    [run]
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    manage *ARGS # Access Django management commands.
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    server       # Run a devserver and worker cluster
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    [uv]
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    uv-install   # Downloads and installs uv on your system.
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    uv-uninstall # Uninstall uv
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    uv-update    # Update uv
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    check-all    # Run tests, check types, perform linting, and security checks.
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    check-types  # Check types
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    fmt          # Run just formatter and ruff formatter.
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    lint *ARGS   # Run ruff linting
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    safety       # Runs bandit safety checks.
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    test *ARGS   # Run the test suite
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    tox *ARGS    # Run tox for code style, type checking, and multi-python tests. Uses run-parallel.
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    [run]
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    manage *ARGS # Access Django management commands.
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    server       # Run a devserver and worker cluster
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    [uv]
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    uv-install   # Downloads and installs uv on your system.
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    uv-uninstall # Uninstall uv
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    uv-update    # Update uv
 </code></pre></div>
 <!-- [[[end]]] -->
 
@@ -881,7 +882,7 @@ If you don't have <code>uv</code>, you should install with <code>just uv-install
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>just<span class="w"> </span>check-types
 </code></pre></div></p>
 <p>To run linting:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>just<span class="w"> </span>check
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>just<span class="w"> </span>lint
 </code></pre></div>
 <p>The <code>just safety</code> command will look at the security of your code.</p>
 <h3 id="before-submitting">Before submitting</h3>
@@ -891,7 +892,7 @@ If you don't have <code>uv</code>, you should install with <code>just uv-install
 <li>Add tests for the new changes</li>
 <li>Edit documentation if you have changed something significant</li>
 <li>Run <code>just fmt</code> to format your changes.</li>
-<li>Run <code>just check</code> to ensure that types, security and docstrings are okay.</li>
+<li>Run <code>just check-all</code> to ensure that types, security and docstrings are okay.</li>
 </ol>
 <h2 id="other-help">Other help</h2>
 <p>You can contribute by spreading a word about this library.

@@ -818,26 +818,33 @@ cog.out(
     f"```\n{list.stdout.decode('utf-8')}```"
 )
 ]]] -->
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a> Usage: django-admin prune_media [OPTIONS]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a> Usage: django-admin prune_media [OPTIONS]                                      
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a> Remove unreferenced media files to save space.
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a> Remove unreferenced media files to save space.                                 
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│ --no-interaction    --no-no-interaction      Don&#39;t ask for confirmation before deleting. [default: no-no-interaction]   │
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│ --dry-run           --no-dry-run             Do a dry-run without deleting anything. [default: no-dry-run]              │
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│ --help                                       Show this message and exit.                                                │
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>╭─ Django ────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>│ --version                  Show program&#39;s version number and exit.                                                      │
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>│ --settings           TEXT  The Python path to a settings module, e.g. &quot;myproject.settings.main&quot;. If this isn&#39;t          │
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>│                            provided, the DJANGO_SETTINGS_MODULE environment variable will be used.                      │
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>│ --pythonpath         PATH  A directory to add to the Python path, e.g. &quot;/home/djangoprojects/myproject&quot;.                │
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>│                            [default: None]                                                                              │
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>│ --traceback                Raise on CommandError exceptions                                                             │
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>│ --no-color                 Don&#39;t colorize the command output.                                                           │
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>│ --force-color              Force colorization of the command output.                                                    │
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>│ --skip-checks              Skip system checks.                                                                          │
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>╭─ Options ────────────────────────────────────────────────────────────────────╮
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│ --no-interaction    --no-no-interaction      Don&#39;t ask for confirmation      │
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│                                              before deleting.                │
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│                                              [default: no-no-interaction]    │
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│ --dry-run           --no-dry-run             Do a dry-run without deleting   │
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>│                                              anything.                       │
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>│                                              [default: no-dry-run]           │
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>│ --help                                       Show this message and exit.     │
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>╰──────────────────────────────────────────────────────────────────────────────╯
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>╭─ Django ─────────────────────────────────────────────────────────────────────╮
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>│ --version                  Show program&#39;s version number and exit.           │
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>│ --settings           TEXT  The Python path to a settings module, e.g.        │
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>│                            &quot;myproject.settings.main&quot;. If this isn&#39;t          │
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>│                            provided, the DJANGO_SETTINGS_MODULE environment  │
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>│                            variable will be used.                            │
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>│ --pythonpath         PATH  A directory to add to the Python path, e.g.       │
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>│                            &quot;/home/djangoprojects/myproject&quot;.                 │
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>│                            [default: None]                                   │
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>│ --traceback                Raise on CommandError exceptions                  │
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>│ --no-color                 Don&#39;t colorize the command output.                │
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>│ --force-color              Force colorization of the command output.         │
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>│ --skip-checks              Skip system checks.                               │
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>╰──────────────────────────────────────────────────────────────────────────────╯
 </code></pre></div>
 <!-- [[[end]]] -->
 
@@ -853,25 +860,30 @@ cog.out(
     f"```\n{list.stdout.decode('utf-8')}```"
 )
 ]]] -->
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a> Usage: django-admin show_empty_media_dirs [OPTIONS]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a> Usage: django-admin show_empty_media_dirs [OPTIONS]                            
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a> List empty media directories for review or to pipe to another command.
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a> List empty media directories for review or to pipe to another command.         
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>│ --clean    --no-clean      Print paths only so they can be piped to other commands [default: no-clean]                  │
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>│ --help                     Show this message and exit.                                                                  │
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>╭─ Django ────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>│ --version                  Show program&#39;s version number and exit.                                                      │
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>│ --settings           TEXT  The Python path to a settings module, e.g. &quot;myproject.settings.main&quot;. If this isn&#39;t          │
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>│                            provided, the DJANGO_SETTINGS_MODULE environment variable will be used.                      │
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>│ --pythonpath         PATH  A directory to add to the Python path, e.g. &quot;/home/djangoprojects/myproject&quot;.                │
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>│                            [default: None]                                                                              │
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>│ --traceback                Raise on CommandError exceptions                                                             │
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>│ --no-color                 Don&#39;t colorize the command output.                                                           │
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>│ --force-color              Force colorization of the command output.                                                    │
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>│ --skip-checks              Skip system checks.                                                                          │
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>╭─ Options ────────────────────────────────────────────────────────────────────╮
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>│ --clean    --no-clean      Print paths only so they can be piped to other    │
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>│                            commands                                          │
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>│                            [default: no-clean]                               │
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>│ --help                     Show this message and exit.                       │
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>╰──────────────────────────────────────────────────────────────────────────────╯
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>╭─ Django ─────────────────────────────────────────────────────────────────────╮
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>│ --version                  Show program&#39;s version number and exit.           │
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>│ --settings           TEXT  The Python path to a settings module, e.g.        │
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>│                            &quot;myproject.settings.main&quot;. If this isn&#39;t          │
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>│                            provided, the DJANGO_SETTINGS_MODULE environment  │
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>│                            variable will be used.                            │
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>│ --pythonpath         PATH  A directory to add to the Python path, e.g.       │
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>│                            &quot;/home/djangoprojects/myproject&quot;.                 │
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>│                            [default: None]                                   │
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>│ --traceback                Raise on CommandError exceptions                  │
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>│ --no-color                 Don&#39;t colorize the command output.                │
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>│ --force-color              Force colorization of the command output.         │
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>│ --skip-checks              Skip system checks.                               │
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>╰──────────────────────────────────────────────────────────────────────────────╯
 </code></pre></div>
 <!-- [[[end]]] -->
 
