@@ -2,6 +2,9 @@
 
 A Django app that provides management commands for pruning unused media files.
 
+> [!IMPORTANT]
+> This project has [migrated to Codeberg](https://codeberg.org/andrlik/django-prune-media) as of release 0.1.6. All updates, issues, and pull requests will occur there.
+
 [![PyPI](https://img.shields.io/pypi/v/django-prune-media)](https://pypi.org/project/django-prune-media/)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-prune-media)
 ![PyPI - Versions from Framework Classifiers](https://img.shields.io/pypi/frameworkversions/django/django-prune-media)
